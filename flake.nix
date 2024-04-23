@@ -32,7 +32,7 @@
           ];
           inherit system;
         };
-        overlayAttrs = config.packages;
+        overlayAttrs = { inherit (config.packages) ubootH96MaxV58; };
       };
       flake = let
         images = {
@@ -48,7 +48,10 @@
           aarch64-linux.h96-max-v58-image = images.h96-max-v58;
         };
         nixosModules = {
-          mesa-panfork = import ./mesa-panfork.nix;
+          mesa-panfork = import ./mesa-panfork.nix {inputs=inputs;};
+
+          base-config = import ./configuration.nix;
+          device-tree = import ./device-tree.nix;
         };
         nixosConfigurations = {
           h96-max-v58 = nixpkgs.lib.nixosSystem {

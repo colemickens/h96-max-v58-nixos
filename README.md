@@ -20,9 +20,15 @@ This repository is for my own research, development and bringup of the H96 Max V
 
 # Usage
 
-1. Get the device into maskrom or loader mode
-2. `nix build .#h96-max-v58-image`
-3. `rkdeveloptool wl 0 ./result/sd-image/*.img`
+0. Build the image:
+   * `nix build .#h96-max-v58-image`
+0. Boot into MaskRom
+   * use the instructions here:
+   * you should see this in `dmesg`: `New USB device found, idVendor=2207, idProduct=350b, bcdDevice= 1.00`
+0. Load the Rockchip USB Loader
+   * `rkdeveloptool db /tmp/rk3588_spl_loader_v1.08.111.bin`
+0. Write the image to the board:
+   * `rkdeveloptool wl 0 ./result/sd-image/*.img`
 
 # What works?
 

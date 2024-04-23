@@ -1,4 +1,5 @@
-{ pkgs, inputs, ... }:
+{ inputs }: 
+{ pkgs, ... }:
 let
   mesa = pkgs.callPackage ./mesa {
     galliumDrivers = [ "panfrost" ];
