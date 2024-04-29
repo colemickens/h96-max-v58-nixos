@@ -54,7 +54,6 @@
     pciutils
     usbutils
     alsa-utils
-    magic-wormhole
   ];
   nix.settings = {
     experimental-features = lib.mkDefault "nix-command flakes";
