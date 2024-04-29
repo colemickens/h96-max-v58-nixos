@@ -64,16 +64,16 @@
   services.logind.extraConfig = ''
     RuntimeDirectorySize=50%
   '';
-  users = {
-    users = {
-      root.password = "default";
-      default = {
-        password = "default";
-        isNormalUser = true;
-        extraGroups = [ "wheel" "dialout" "input" "video" "audio" ];
-      };
-    };
-  };
+  # users = {
+  #   users = {
+  #     root.password = "default";
+  #     default = {
+  #       password = "default";
+  #       isNormalUser = true;
+  #       extraGroups = [ "wheel" "dialout" "input" "video" "audio" ];
+  #     };
+  #   };
+  # };
   networking.wireless.enable = true;
   networking.wireless.networks.DoESLiverpool.pskRaw = "63e49f779a41eda7be1510a275a07e519d407af706d0f2d3cc3140b9aecd412f";
 }
