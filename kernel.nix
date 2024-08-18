@@ -8,16 +8,14 @@
 
 let
   # https://gitlab.collabora.com/hardware-enablement/rockchip-3588/linux/-/tree/rk3588?ref_type=heads
-  # 99fc9cef1176e5290f88c1f55589174022a638cd
-  modDirVersion = "6.9.0-rc1";
+  # modDirVersion = "6.11.0-rc1";
+  # tag = "8400291e289ee6b2bf9779ff1c83a291501f017b";
+  # hash = "sha256-YXVXlIs9nA9muXhdGSaR1JtIx5IDoe7TpEjTSLuwKjE=";
 
-  # hdmi audio does not work on this rev
-#  tag = "b8807d4c1f35361910dadfac9b2d4911fe033f45";
-#  hash = "sha256-SY1SWr5QqqxkaBXToObO9hTrklbFdJle3r5F26LXqK4=";
-
-  # hdmi-audio branch, but it still doesn't work
-  tag = "b87029303f970a0e0f01a89ea6b8928f24d8619b";
-  hash = "sha256-tkU8tlf3ei0ihLGbrZz8Li5lMZWbwM0jFv/klgQ+wh4=";
+  # https://gitlab.collabora.com/hardware-enablement/rockchip-3588/linux/-/blob/rk3588-hdmi-bridge-v6.11-rc1/arch/arm64/boot/dts/rockchip/rk3588-base.dtsi?ref_type=heads
+  modDirVersion = "6.11.0-rc1";
+  tag = "964c7684bdd5da4defcc5e242e813d6c1213fe01";
+  hash = "sha256-vOcb5doLi2NJ8+zvqCMfxLsUsOc3ab/di9Q9IG3g9uI=";
 in
 buildLinux (
   args

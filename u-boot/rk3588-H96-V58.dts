@@ -707,9 +707,13 @@
 };
 
 // Not sure if this is necessary
-&hdmirx_cma {
-	status = "okay";
-};
+// &hdmi_receiver_cma {
+// 	status = "okay";
+// };
+// wait we don't have hdmi in on this board anyway?
+// &hdmi_receiver {
+// 	status = "okay";
+// };
 
 &display_subsystem {
 	clocks = <&hdptxphy_hdmi0>;

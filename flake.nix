@@ -2,14 +2,7 @@
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    mesa-panthor = {
-      type = "gitlab";
-      host = "gitlab.freedesktop.org";
-      owner = "mesa";
-      repo = "mesa";
-      ref = "63d2aa4eb645e32ea3d5aea453a45aa6a3412e15";
-      flake = false;
-    };
+    nixpkgs-mesa.url = "github:K900/nixpkgs?ref=mesa-24.2";
   };
   outputs = inputs@{ flake-parts, nixpkgs, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
@@ -26,7 +19,7 @@
         };
         _module.args.pkgs = import inputs.nixpkgs {
           config.allowUnfree = true;
-          config.allowUnsupportedSystem = true; # remove when https://github.com/NixOS/nixpkgs/pull/303370 is merged
+          # config.allowUnsupportedSystem = true; # remove when https://github.com/NixOS/nixpkgs/pull/303370 is merged
           overlays = [
             inputs.self.overlays.default
           ];
@@ -48,7 +41,7 @@
           aarch64-linux.h96-max-v58-image = images.h96-max-v58;
         };
         nixosModules = {
-          mesa-panfork = import ./mesa-panfork.nix {inputs=inputs;};
+          mesa-24_2 = import ./mesa-24_2.nix {inputs=inputs;};
 
           base-config = import ./configuration.nix;
           device-tree = import ./device-tree.nix;
@@ -58,7 +51,7 @@
             system = "aarch64-linux";
             modules = [
               "${nixpkgs}/nixos/modules/profiles/minimal.nix"
-              inputs.self.nixosModules.mesa-panfork
+              inputs.self.nixosModules.mesa-24_2
               ./configuration.nix
               ./device-tree.nix
             ];
