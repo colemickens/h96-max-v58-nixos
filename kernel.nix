@@ -12,10 +12,15 @@ let
   # tag = "8400291e289ee6b2bf9779ff1c83a291501f017b";
   # hash = "sha256-YXVXlIs9nA9muXhdGSaR1JtIx5IDoe7TpEjTSLuwKjE=";
 
-  # https://gitlab.collabora.com/hardware-enablement/rockchip-3588/linux/-/blob/rk3588-hdmi-bridge-v6.11-rc1/arch/arm64/boot/dts/rockchip/rk3588-base.dtsi?ref_type=heads
+  # # https://gitlab.collabora.com/hardware-enablement/rockchip-3588/linux/-/tree/rk3588-hdmi-bridge-v6.11-rc1/arch/arm64/boot/dts/rockchip/rk3588-base.dtsi?ref_type=heads
+  # modDirVersion = "6.11.0-rc1";
+  # tag = "964c7684bdd5da4defcc5e242e813d6c1213fe01";
+  # hash = "sha256-vOcb5doLi2NJ8+zvqCMfxLsUsOc3ab/di9Q9IG3g9uI=";
+
+  # https://gitlab.collabora.com/hardware-enablement/rockchip-3588/linux/-/treeb/rk3588-test
   modDirVersion = "6.11.0-rc1";
-  tag = "964c7684bdd5da4defcc5e242e813d6c1213fe01";
-  hash = "sha256-vOcb5doLi2NJ8+zvqCMfxLsUsOc3ab/di9Q9IG3g9uI=";
+  tag = "3d0f13b29be285960684a2b8019278897f045ea6";
+  hash = "sha256-NWIod2v0nWb49wjBWGBRMI23ac+laheWXM4t9RIMx6c=";
 in
 buildLinux (
   args

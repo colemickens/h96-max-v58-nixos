@@ -36,6 +36,11 @@
           }).config.system.build.sdImage;
         };
       in {
+        overlays = {
+          kernel = (final: prev: {
+            linux_h96maxv58 = prev.callPackage ./kernel.nix {};
+          });
+        };
         packages = {
           x86_64-linux.h96-max-v58-image = images.h96-max-v58;
           aarch64-linux.h96-max-v58-image = images.h96-max-v58;
