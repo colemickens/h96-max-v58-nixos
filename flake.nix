@@ -49,6 +49,7 @@
           mesa-24_2 = import ./mesa-24_2.nix {inputs=inputs;};
 
           base-config = import ./configuration.nix;
+          kernel-config = import ./configuration-kernel.nix;
           device-tree = import ./device-tree.nix;
         };
         nixosConfigurations = {

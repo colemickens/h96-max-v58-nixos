@@ -3,6 +3,7 @@
   hardware = {
     deviceTree = {
       enable = true;
+      name = "rockchip/rk3588-H96-V58.dtb";
       kernelPackage = pkgs.runCommandCC "rk3588-H96-V58-dts" {
 #        inherit (config.boot.kernelPackages.kernel) src;
         src = pkgs.runCommand "kernel-patched" {
