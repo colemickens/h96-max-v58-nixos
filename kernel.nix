@@ -1,6 +1,7 @@
 {
   buildPackages,
   fetchFromGitLab,
+  fetchzip,
   buildLinux,
   fetchpatch2,
   ...
@@ -18,9 +19,11 @@ let
   # hash = "sha256-vOcb5doLi2NJ8+zvqCMfxLsUsOc3ab/di9Q9IG3g9uI=";
 
   # https://gitlab.collabora.com/hardware-enablement/rockchip-3588/linux/-/treeb/rk3588-test
-  modDirVersion = "6.11.0-rc1";
-  tag = "3d0f13b29be285960684a2b8019278897f045ea6";
-  hash = "sha256-NWIod2v0nWb49wjBWGBRMI23ac+laheWXM4t9RIMx6c=";
+  # modDirVersion = "6.11.0-rc1";
+  # tag = "3d0f13b29be285960684a2b8019278897f045ea6";
+  # hash = "sha256-NWIod2v0nWb49wjBWGBRMI23ac+laheWXM4t9RIMx6c=";
+
+  modDirVersion = "6.11.0-rc7";
 in
 buildLinux (
   args
@@ -28,13 +31,19 @@ buildLinux (
     version = "${modDirVersion}";
     inherit modDirVersion;
 
-    src = fetchFromGitLab {
-      domain = "gitlab.collabora.com";
-      owner = "hardware-enablement/rockchip-3588";
-      repo = "linux";
-      rev = tag;
-      hash = hash;
+    src = fetchzip {
+      url = "https://git.kernel.org/torvalds/t/linux-6.11-rc7.tar.gz";
+      hash = "sha256-vi+GMKXCVxz/kcDlPTFg+GgQFcYWGB1WrIIAlTffiJ0=";
     };
+
+    
+    # src = fetchFromGitLab {
+    #   domain = "gitlab.collabora.com";
+    #   owner = "hardware-enablement/rockchip-3588";
+    #   repo = "linux";
+    #   rev = tag;
+    #   hash = hash;
+    # };
 
     # structuredExtraConfig = with lib.kernel; {
     #   # Not needed, and implementation iffy / does not build / used for testing
