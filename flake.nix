@@ -22,11 +22,9 @@
     };
     nixosConfigurations = {
       example = inputs.nixpkgs.lib.nixosSystem {
-        system = "aarch64-linux";
         modules = [
           (import ./configuration-example.nix { inherit inputs; })
         ];
-        specialArgs = { inherit inputs; };
       };
     };
   };

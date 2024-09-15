@@ -12,6 +12,7 @@
   ];
   config = {
     system.stateVersion = "24.05";
+    nixpkgs.hostPlatform = "aarch64-linux";
 
     environment.systemPackages = with pkgs; [
       vim
