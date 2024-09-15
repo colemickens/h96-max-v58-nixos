@@ -1,3 +1,20 @@
+# h96-max-v58-nixos (Cole's version)
+
+original readme follows
+- refactored flake
+- add a disko image (build on aarch64, copy image, flash)
+- flash full disko image to 0x0 in maskrom
+- 6.11 w/ armbian wifi patch
+- device-tree with manual hand-rolled dts
+- !!! note, I dropped hdmi nodes to build against mainline
+- uboot still on some random rev, with hand-rolled dts
+- (dts have no changes from original fork)
+
+I dropped a bunch of the flake-parts helpers, and took an opinionated
+approach. Also not sure what appetite is for maintaining this, so leaving
+it here in this fork for now.
+
+
 # h96-max-v58-nixos
 
 ![h96-max-v58](https://github.com/MatthewCroughan/h96-max-v58-nixos/assets/26458780/160e2ea4-484f-4da2-874c-7390ec5c5f74)
