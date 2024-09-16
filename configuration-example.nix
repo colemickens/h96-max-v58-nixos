@@ -67,14 +67,21 @@
         content = {
           type = "gpt";
           partitions = {
-            firmware = {
-              start = "64";
+            empty = {
+              priority = 1;
+              start = "34";
               alignment = 1;
-              end = "61440";
+              end = "63";
+            };
+            firmware = {
+              priority = 2;
+              start = "64";
+              size = "64M";
+              alignment = 1;
             };
             ESP = {
-              start = "64M";
-              end = "512M";
+              priority = 3;
+              size = "512M";
               type = "EF00";
               content = {
                 type = "filesystem";
@@ -82,13 +89,8 @@
                 mountpoint = "/boot";
               };
             };
-            swap = {
-              size = "8G";
-              content = {
-                type = "swap";
-              };
-            };
             rootfs = {
+              priority = 4;
               content = {
                 type = "filesystem";
                 format = "ext4";
