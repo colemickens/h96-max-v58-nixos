@@ -1,7 +1,6 @@
 {
   inputs = {
-    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:colemickens/nixpkgs?ref=cmpkgs";
+    nixpkgs.url = "github:NixOS/nixpkgs?ref=nixos-unstable";
     disko.url = "github:nix-community/disko";
   };
   outputs = inputs: rec {
